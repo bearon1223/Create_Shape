@@ -1,7 +1,8 @@
 class creator {
   float tempx = 0, tempy = 0, cursorx, cursory;
   int Type = 0, ClickedNR = 0, ClickedNC = 0, CheckClick = 0;
-  boolean PressedR = false;
+  boolean PressedR = false, showGrid = false;
+  ;
 
   creator() {
   }
@@ -13,28 +14,30 @@ class creator {
     } else if (Type == 0 && CheckClick == 1) {
       rect(tempx, tempy, (floor(mouseX / grid + 1) * grid) - tempx, (floor(mouseY / grid + 1) * grid) - tempy);
     }
-    
+
     if (Type == 1 && CheckClick == 0) {
       ellipse(floor(mouseX / grid) * grid + grid / 2, floor(mouseY / grid) * grid + grid / 2, 1, 1);
     } else if (Type == 1 && CheckClick == 1) {
       ellipse(tempx, tempy, (floor(mouseX / grid) * grid + grid / 2) - tempx, (floor(mouseX / grid) * grid + grid / 2) - tempx);
     }
-    
+
     for (int i = 0; i <= ClickedNR; i++) {
       fill(0);
       rectG(rectanglex[i], rectangley[i], rectanglesx[i], rectanglesy[i]);
     }
-    
+
     for (int i = 0; i <= ClickedNC; i++) {
       fill(0);
       ellipse(Circlex[i] * grid, Circley[i] * grid, Circler[i] * grid, Circler[i] * grid);
     }
 
-    for (int i = 0; i <= width; i+=grid) {
-      for (int j = 0; j <= height; j+=grid) {
-        noFill();
-        stroke(100);
-        rect(i, j, grid, grid);
+    if (showGrid) {
+      for (int i = 0; i <= width; i+=grid) {
+        for (int j = 0; j <= height; j+=grid) {
+          noFill();
+          stroke(100);
+          rect(i, j, grid, grid);
+        }
       }
     }
   }

@@ -55,6 +55,13 @@ void scenes () {
       if (Button("Circle", 50, 110, 120, 50, 22)){
         c.Type = 1;
       }
+      if (Button("Show Grid: " + c.showGrid, 50, 170, 120, 50, 15)){
+        if(c.showGrid){
+          c.showGrid = false;
+        } else if(!c.showGrid){
+          c.showGrid = true;
+        }
+      }
       if (Button("Generate", width - 110, height - 60, 100, 50, 22)) {
         scene = 3;
         inMenu = false;
