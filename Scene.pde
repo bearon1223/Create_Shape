@@ -44,7 +44,7 @@ void scenes () {
     }
   } else if (scene == 3 && isResizable) {
     println("void Shape(float x, float y, float width, float height) {");
-    println("  float w = width / 2, h = height / 2;");
+    println("  float w = width / 4, h = height / 4;");
     for (int i = 1; i <= c.ClickedNR; i++) {
       println("  rect((x + "+floor(rectanglex[i]*grid)+") * w,(y + "+floor(rectangley[i]*grid)+") * h,w * "+floor(rectanglesx[i]*grid)+",h * "+floor(rectanglesy[i]*grid)+");");
     }
