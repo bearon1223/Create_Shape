@@ -17,7 +17,7 @@ class creator {
     if (Type == 1 && CheckClick == 0) {
       ellipse(floor(mouseX / grid) * grid + grid / 2, floor(mouseY / grid) * grid + grid / 2, 1, 1);
     } else if (Type == 1 && CheckClick == 1) {
-      ellipse(tempx, tempy, (floor(mouseX / grid) * grid) - tempx, (floor(mouseX / grid) * grid) - tempx);
+      ellipse(tempx, tempy, (floor(mouseX / grid) * grid + grid / 2) - tempx, (floor(mouseX / grid) * grid + grid / 2) - tempx);
     }
     
     for (int i = 0; i <= ClickedNR; i++) {
@@ -62,7 +62,7 @@ class creator {
       tempy = floor(mouseY / grid) * grid + grid / 2;
       PressedR = true;
     } else if (Type == 1 && CheckClick == 1 && !PressedR && mousePressed) {
-      Circler[ClickedNC] = floor(mouseX / grid) - Circlex[ClickedNC];
+      Circler[ClickedNC] = floor(mouseX / grid) - Circlex[ClickedNC] + 0.5;
       CheckClick = 0;
       PressedR = true;
     } else if (PressedR && !mousePressed) {
