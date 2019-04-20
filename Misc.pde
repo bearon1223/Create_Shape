@@ -1,4 +1,4 @@
-boolean Pressed = false, P4essed = false;
+boolean Pressed = false, P4essed = false, ggfdsakfjd = false;
 //sqrt((w*w)+(h*h)) / 5
 boolean Button(String text, float x, float y, float w, float h, float textSize) {
   boolean t = false;
@@ -12,6 +12,17 @@ boolean Button(String text, float x, float y, float w, float h, float textSize) 
     Pressed = true;
   } else if (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h  && !mousePressed && Pressed) {
     Pressed = false; 
+    t = true;
+  }
+  return t;
+}
+
+boolean Button(float x, float y, float w, float h) {
+  boolean t = false;
+  if (mouseX >= x && mouseY >= y && mouseX <= x + w && mouseY <= y + h && !ggfdsakfjd && mousePressed) {
+    ggfdsakfjd = true;
+  } else if (mouseX >= x && mouseY >= y && mouseX <= x + w && mouseY <= y + h && ggfdsakfjd && !mousePressed) {
+    ggfdsakfjd = false;
     t = true;
   }
   return t;

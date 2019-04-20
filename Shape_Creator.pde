@@ -2,7 +2,6 @@ class creator {
   float tempx = 0, tempy = 0, cursorx, cursory;
   int Type = 0, ClickedNR = 0, ClickedNC = 0, CheckClick = 0;
   boolean PressedR = false, showGrid = false;
-  ;
 
   creator() {
   }

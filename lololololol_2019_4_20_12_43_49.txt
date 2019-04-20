@@ -1,0 +1,6 @@
+void Shape(float x, float y, float widthb, float heightb) {
+  float w = widthb / 4, h = heightb / 4;
+  rect(x + (120) * w, y + (75) * h, w * 285, h * 345);
+  rect(x + (360) * w, y + (345) * h, w * 210, h * 225);
+  ellipse(x + (52) * w, y + (127) * h, w * 285, h * 285);
+}
