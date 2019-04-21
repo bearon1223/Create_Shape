@@ -28,6 +28,17 @@ boolean Button(float x, float y, float w, float h) {
   return t;
 }
 
+boolean antiButton(float x, float y, float w, float h) {
+  boolean t = false;
+  if (!(mouseX >= x && mouseY >= y && mouseX <= x + w && mouseY <= y + h) && !ggfdsakfjd && mousePressed) {
+    ggfdsakfjd = true;
+  } else if (!(mouseX >= x && mouseY >= y && mouseX <= x + w && mouseY <= y + h) && ggfdsakfjd && !mousePressed) {
+    ggfdsakfjd = false;
+    t = true;
+  }
+  return t;
+}
+
 boolean keyDetection(Character keyWanted) {
   boolean t = false;
   if (key == keyWanted && keyPressed && !P4essed) {

@@ -18,7 +18,9 @@ class type {
       } else if (iITF == true) {
         iITF = false;
       }
-    } else if(keyDetection(ENTER)){
+    } else if (keyDetection(ENTER)) {
+      iITF = false;
+    } else if (antiButton(x, y, w, h)) {
       iITF = false;
     }
   }
@@ -26,15 +28,15 @@ class type {
   void typing() {
     if (iITF) {
       if (keyPressed && !pressedT) {
-      if (key != BACKSPACE && key != ENTER) {
-        t += key;
-      } else if (key == BACKSPACE) {
-        t = "";
+        if (key != BACKSPACE && key != ENTER) {
+          t += key;
+        } else if (key == BACKSPACE) {
+          t = "";
+        }
+        pressedT = true;
+      } else if (!keyPressed && pressedT) {
+        pressedT = false;
       }
-      pressedT = true;
-    } else if (!keyPressed && pressedT) {
-      pressedT = false;
-    }
     }
   }
   void render() {
